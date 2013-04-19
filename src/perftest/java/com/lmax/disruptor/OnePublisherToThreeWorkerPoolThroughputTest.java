@@ -61,9 +61,9 @@ public final class OnePublisherToThreeWorkerPoolThroughputTest
     }
 
     private final RingBuffer<ValueEvent> ringBuffer = 
-            RingBuffer.createSingleProducer(ValueEvent.EVENT_FACTORY, 
-                                            BUFFER_SIZE,
-                                            new YieldingWaitStrategy());
+            RingBufferImpl.createSingleProducer(ValueEvent.EVENT_FACTORY,
+                    BUFFER_SIZE,
+                    new YieldingWaitStrategy());
     
     private final WorkerPool<ValueEvent> workerPool = 
             new WorkerPool<ValueEvent>(ringBuffer,

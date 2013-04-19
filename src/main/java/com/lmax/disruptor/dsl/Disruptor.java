@@ -53,7 +53,7 @@ public class Disruptor<T>
      */
     public Disruptor(final EventFactory<T> eventFactory, final int ringBufferSize, final Executor executor)
     {
-        this(RingBuffer.createMultiProducer(eventFactory, ringBufferSize), executor);
+        this(RingBufferImpl.createMultiProducer(eventFactory, ringBufferSize), executor);
     }
 
     /**
@@ -70,7 +70,7 @@ public class Disruptor<T>
                      final ProducerType producerType,
                      final WaitStrategy waitStrategy)
     {
-        this(RingBuffer.create(producerType, eventFactory, ringBufferSize, waitStrategy),
+        this(RingBufferImpl.create(producerType, eventFactory, ringBufferSize, waitStrategy),
              executor);
     }
 
@@ -206,27 +206,28 @@ public class Disruptor<T>
         ringBuffer.publishEvent(eventTranslator);
     }
 
-    /**
-     * Publish an event to the ring buffer.
-     *
-     * @param eventTranslator the translator that will load data into the event.
-     * @param arg A single argument to load into the event
-     */
-    public <A> void publishEvent(final EventTranslatorOneArg<T, A> eventTranslator, A arg)
-    {
-        ringBuffer.publishEvent(eventTranslator, arg);
-    }
-
-    /**
-     * Publish a batch of events to the ring buffer.
-     *
-     * @param eventTranslator the translator that will load data into the event.
-     * @param arg An array single arguments to load into the events. One Per event.
-     */
-    public <A> void publishEvents(final EventTranslatorOneArg<T, A> eventTranslator, A[] arg)
-    {
-        ringBuffer.publishEvents(eventTranslator, arg);
-    }
+    //TODO work out how to integrate batch publication with DSL
+//    /**
+//     * Publish an event to the ring buffer.
+//     *
+//     * @param eventTranslator the translator that will load data into the event.
+//     * @param arg A single argument to load into the event
+//     */
+//    public <A> void publishEvent(final EventTranslatorOneArg<T, A> eventTranslator, A arg)
+//    {
+//        ringBuffer.publishEvent(eventTranslator, arg);
+//    }
+//
+//    /**
+//     * Publish a batch of events to the ring buffer.
+//     *
+//     * @param eventTranslator the translator that will load data into the event.
+//     * @param arg An array single arguments to load into the events. One Per event.
+//     */
+//    public <A> void publishEvents(final EventTranslatorOneArg<T, A> eventTranslator, A[] arg)
+//    {
+//        ringBuffer.publishEvents(eventTranslator, arg);
+//    }
 
     /**
      * Starts the event processors and returns the fully configured ring buffer.<p/>
@@ -281,7 +282,7 @@ public class Disruptor<T>
     }
 
     /**
-     * The {@link RingBuffer} used by this Disruptor.  This is useful for creating custom
+     * The {@link com.lmax.disruptor.RingBufferImpl} used by this Disruptor.  This is useful for creating custom
      * event processors if the behaviour of {@link BatchEventProcessor} is not suitable.
      *
      * @return the ring buffer used by this Disruptor.
@@ -317,7 +318,7 @@ public class Disruptor<T>
      *
      * @param sequence for the event.
      * @return event for the sequence.
-     * @see RingBuffer#get(long)
+     * @see com.lmax.disruptor.RingBufferImpl#get(long)
      */
     public T get(final long sequence)
     {

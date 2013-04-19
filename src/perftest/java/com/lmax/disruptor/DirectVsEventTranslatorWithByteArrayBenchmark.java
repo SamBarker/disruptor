@@ -15,15 +15,15 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
+import com.google.caliper.Runner;
+import com.google.caliper.SimpleBenchmark;
 
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.google.caliper.Runner;
-import com.google.caliper.SimpleBenchmark;
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 
 public class DirectVsEventTranslatorWithByteArrayBenchmark extends SimpleBenchmark
 {

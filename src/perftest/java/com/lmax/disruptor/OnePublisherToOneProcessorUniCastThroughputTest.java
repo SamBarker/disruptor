@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 
 import com.lmax.disruptor.support.*;
 import com.lmax.disruptor.util.DaemonThreadFactory;

@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createMultiProducer;
+import static com.lmax.disruptor.RingBufferImpl.createMultiProducer;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;

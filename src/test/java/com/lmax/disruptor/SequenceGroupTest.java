@@ -130,7 +130,7 @@ public final class SequenceGroupTest
     @Test
     public void shouldAddWhileRunning() throws Exception
     {
-        RingBuffer<TestEvent> ringBuffer = RingBuffer.createSingleProducer(TestEvent.EVENT_FACTORY, 32);
+        RingBuffer<TestEvent> ringBuffer = RingBufferImpl.createSingleProducer(TestEvent.EVENT_FACTORY, 32);
         final Sequence sequenceThree = new Sequence(3L);
         final Sequence sequenceSeven = new Sequence(7L);
         final SequenceGroup sequenceGroup = new SequenceGroup();

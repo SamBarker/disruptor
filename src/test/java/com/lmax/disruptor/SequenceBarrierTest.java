@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createMultiProducer;
+import static com.lmax.disruptor.RingBufferImpl.createMultiProducer;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

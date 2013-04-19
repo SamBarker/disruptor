@@ -30,7 +30,7 @@ public class RingBufferWithMocksTest
             }
         });
         
-        ringBuffer = new RingBuffer<StubEvent>(StubEvent.EVENT_FACTORY, sequencer);
+        ringBuffer = new RingBufferImpl<StubEvent>(StubEvent.EVENT_FACTORY, sequencer);
     }
 
     @Test

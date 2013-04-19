@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

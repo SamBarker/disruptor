@@ -23,7 +23,7 @@ import java.io.PrintStream;
 import java.math.BigDecimal;
 import java.util.concurrent.*;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;

@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 
 import com.lmax.disruptor.support.Operation;
 import com.lmax.disruptor.support.ValueEvent;

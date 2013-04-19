@@ -15,8 +15,6 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createSingleProducer;
-
 import com.lmax.disruptor.support.FunctionEvent;
 import com.lmax.disruptor.support.FunctionEventHandler;
 import com.lmax.disruptor.support.FunctionQueueProcessor;
@@ -24,7 +22,14 @@ import com.lmax.disruptor.support.FunctionStep;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import static com.lmax.disruptor.RingBufferImpl.createSingleProducer;
 
 /**
  * <pre>

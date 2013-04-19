@@ -15,7 +15,7 @@
  */
 package com.lmax.disruptor;
 
-import static com.lmax.disruptor.RingBuffer.createMultiProducer;
+import static com.lmax.disruptor.RingBufferImpl.createMultiProducer;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 

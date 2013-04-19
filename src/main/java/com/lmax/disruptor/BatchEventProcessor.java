@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 /**
- * Convenience class for handling the batching semantics of consuming entries from a {@link RingBuffer}
+ * Convenience class for handling the batching semantics of consuming entries from a {@link RingBufferImpl}
  * and delegating the available events to an {@link EventHandler}.
  *
  * If the {@link EventHandler} also implements {@link LifecycleAware} it will be notified just after the thread

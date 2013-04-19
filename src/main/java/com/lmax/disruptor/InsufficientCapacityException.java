@@ -18,7 +18,7 @@ package com.lmax.disruptor;
 /**
  * <p>Exception thrown when the it is not possible to insert a value into
  * the ring buffer without it wrapping the consuming sequenes.  Used
- * specifically when claiming with the {@link RingBuffer#tryNext()} call.
+ * specifically when claiming with the {@link RingBufferImpl#tryNext()} call.
  * 
  * <p>For efficiency this exception will not have a stack trace.
  * @author mikeb01

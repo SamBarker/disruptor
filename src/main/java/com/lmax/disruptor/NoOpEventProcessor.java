@@ -18,7 +18,7 @@ package com.lmax.disruptor;
 /**
  * No operation version of a {@link EventProcessor} that simply tracks a {@link Sequence}.
  *
- * This is useful in tests or for pre-filling a {@link RingBuffer} from a publisher.
+ * This is useful in tests or for pre-filling a {@link RingBufferImpl} from a publisher.
  */
 public final class NoOpEventProcessor implements EventProcessor
 {

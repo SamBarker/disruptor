@@ -28,7 +28,7 @@ import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
 
-import static com.lmax.disruptor.RingBuffer.createMultiProducer;
+import static com.lmax.disruptor.RingBufferImpl.createMultiProducer;
 import static com.lmax.disruptor.support.Actions.countDown;
 import static org.junit.Assert.assertEquals;
 

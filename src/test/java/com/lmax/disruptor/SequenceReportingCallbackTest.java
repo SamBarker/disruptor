@@ -20,7 +20,7 @@ import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
 
-import static com.lmax.disruptor.RingBuffer.createMultiProducer;
+import static com.lmax.disruptor.RingBufferImpl.createMultiProducer;
 import static org.junit.Assert.assertEquals;
 
 public class SequenceReportingCallbackTest
